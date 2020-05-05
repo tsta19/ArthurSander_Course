@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data.SqlClient;
 using ConsoleApplication1.Properties;
 
 namespace ConsoleApplication1
@@ -39,7 +40,6 @@ namespace ConsoleApplication1
             Console.WriteLine("------------------<[ Book Completion ]>------------------");
             
             Console.Read();
-
         }
     }
 }
