@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleApplication1.Properties
+namespace ConsoleApplication1.Lesson01_Book
 {
-    public class Books
+    public class Book
     {
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }

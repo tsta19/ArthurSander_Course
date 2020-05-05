@@ -38,8 +38,9 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Books.cs" />
-        <Compile Include="Program.cs" />
+        <Compile Include="Lesson01_Book\Books.cs" />
+        <Compile Include="Lesson01_Book\Program.cs" />
+        <Compile Include="Lesson02_SQL\BookRepository.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
