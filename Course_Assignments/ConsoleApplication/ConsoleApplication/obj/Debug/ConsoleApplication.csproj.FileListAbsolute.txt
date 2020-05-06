@@ -1,0 +1,6 @@
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.exe
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\bin\Debug\ConsoleApplication.pdb
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.csprojAssemblyReference.cache
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.csproj.CoreCompileInputs.cache
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.exe
+C:\Users\Thomas Andersen\Documents\GitKraken Repo\ArthurSander_Course\Course_Assignments\ConsoleApplication\ConsoleApplication\obj\Debug\ConsoleApplication.pdb
