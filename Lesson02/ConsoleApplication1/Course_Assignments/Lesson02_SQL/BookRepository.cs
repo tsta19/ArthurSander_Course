@@ -8,18 +8,15 @@ namespace ConsoleApplication1.Lesson02_SQL
 {
     public class BookRepository
     {
-        public Book Get(int id)
-        {
-            
-        }
-
-        public List<Book> list(int limit = 5)
-        {
-        }
 
         public void Create(Book book)
         {
+            string commandLine = string.Format("INSERT INTO products VALUES('{0}', '{1}', '{2}', '{3}')", person.Name, person.Address, person.BirthDate.ToString("dd-MM-yyyy"), person.Email);
             var connection = getConnection();
+            var command = new SqlCommand(commandLine, connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
             
         }
 
