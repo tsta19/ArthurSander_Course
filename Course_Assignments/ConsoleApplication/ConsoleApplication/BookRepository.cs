@@ -32,5 +32,16 @@ namespace ConsoleApplication
                 MultiSubnetFailover=False"                
             );
         }
+
+        private Book fillBook(SqlDataReader result)
+        {
+            var book = new Book();
+            book.Name = (string) result.GetValue(0);
+            book.ReleaseDate = (DateTime) result.GetValue(1);
+            book.NumberOfPages = (int) result.GetValue(2);
+            book.Author = (string) result.GetValue(3);
+            return book;
+        }
+
     }
 }

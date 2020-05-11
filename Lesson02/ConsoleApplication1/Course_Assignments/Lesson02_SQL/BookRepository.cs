@@ -36,7 +36,8 @@ namespace ConsoleApplication1.Lesson02_SQL
 
         private Book fillBook(SqlDataReader result)
         {
-            
+            var Book = new Book();
+            Book
         }
     }
 }
