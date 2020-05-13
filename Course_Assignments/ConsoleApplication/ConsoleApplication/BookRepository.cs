@@ -7,6 +7,18 @@ namespace ConsoleApplication
 {
     public class BookRepository
     {
+        public Book Get(int id)
+        {
+            string commandLine = string.Format("SELECT * FROM books WHERE id = '{0}'", id);
+            var connection = getConnection();
+            var command = new SqlCommand(commandLine, connection);
+            connection.Open();
+            var result = command.ExecuteReader();
+            result.Read();
+            var book = fillBook(result);
+            connection.Close();
+            return book;
+        }
 
         public void Create(Book book)
         {

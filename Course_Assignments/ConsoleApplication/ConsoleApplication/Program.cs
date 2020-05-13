@@ -31,16 +31,27 @@ namespace ConsoleApplication
                     break;
                 
             }
-            
         }
         public static void GetOption() 
         {
             BookRepository bookRepository = new BookRepository();
-            
+
             Console.WriteLine("------------------<[ Book Searcher ]>------------------");
-            Console.WriteLine("What is the name of the book you wish to see?");
-            string bookName = Console.ReadLine();
+            Console.WriteLine("What is the id of the book you wish to see?");
+            int id = int.Parse(Console.ReadLine());
             Console.Clear();
+
+            var book = bookRepository.Get(id);
+            
+            Console.WriteLine("--------------------------<[ Book Searcher ]>--------------------------");
+            Console.WriteLine("If the information below is correct write 'yes' and 'no' correspondingly");
+            Console.WriteLine("");
+            Console.WriteLine("The searched books name is: " + book.Name);
+            Console.WriteLine("The searched books release date is: " + book.ReleaseDate);
+            Console.WriteLine("The searched books number of pages is: " + book.NumberOfPages);
+            Console.WriteLine("The searched books author is: " + book.Author);
+            Console.WriteLine("");
+            Console.WriteLine("--------------------------<[ Book Searcher ]>--------------------------");
         }
 
         public static void CreateOption()
