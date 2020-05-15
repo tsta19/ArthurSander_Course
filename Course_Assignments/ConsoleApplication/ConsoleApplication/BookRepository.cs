@@ -7,9 +7,9 @@ namespace ConsoleApplication
 {
     public class BookRepository
     {
-        public Book Get(int id)
+        public Book Get(int BookID)
         {
-            string commandLine = string.Format("SELECT * FROM books WHERE id = '{0}'", id);
+            string commandLine = string.Format("SELECT * FROM books WHERE id = '{0}'", BookID);
             var connection = getConnection();
             var command = new SqlCommand(commandLine, connection);
             connection.Open();
@@ -22,7 +22,7 @@ namespace ConsoleApplication
 
         public void Create(Book book)
         {
-            string commandLine = string.Format("INSERT INTO books VALUES('{0}', '{1}', '{2}', '{3}')", book.Name, book.ReleaseDate.ToString("dd-MM-yyyy"), book.NumberOfPages, book.Author);
+            string commandLine = string.Format("INSERT INTO books VALUES('{0}', '{1}', {2}, '{3}')", book.Name, book.ReleaseDate.ToString("dd-MM-yyyy"), book.NumberOfPages, book.Author);
             var connection = getConnection();
             var command = new SqlCommand(commandLine, connection);
             connection.Open();
@@ -48,10 +48,11 @@ namespace ConsoleApplication
         private Book fillBook(SqlDataReader result)
         {
             var book = new Book();
-            book.Name = (string) result.GetValue(0);
-            book.ReleaseDate = (DateTime) result.GetValue(1);
-            book.NumberOfPages = (int) result.GetValue(2);
-            book.Author = (string) result.GetValue(3);
+            book.BookID = (int) result.GetValue(0);
+            book.Name = (string) result.GetValue(1);
+            book.ReleaseDate = (DateTime) result.GetValue(2);
+            book.NumberOfPages = (int) result.GetValue(3);
+            book.Author = (string) result.GetValue(4);
             return book;
         }
 

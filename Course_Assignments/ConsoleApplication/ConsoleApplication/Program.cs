@@ -38,13 +38,12 @@ namespace ConsoleApplication
 
             Console.WriteLine("------------------<[ Book Searcher ]>------------------");
             Console.WriteLine("What is the id of the book you wish to see?");
-            int id = int.Parse(Console.ReadLine());
+            int bookID = int.Parse(Console.ReadLine());
             Console.Clear();
 
-            var book = bookRepository.Get(id);
+            var book = bookRepository.Get(bookID);
             
             Console.WriteLine("--------------------------<[ Book Searcher ]>--------------------------");
-            Console.WriteLine("If the information below is correct write 'yes' and 'no' correspondingly");
             Console.WriteLine("");
             Console.WriteLine("The searched books name is: " + book.Name);
             Console.WriteLine("The searched books release date is: " + book.ReleaseDate);
