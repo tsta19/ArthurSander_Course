@@ -20,6 +20,22 @@ namespace ConsoleApplication
             return book;
         }
 
+        public List<Book> List(int limit = 5)
+        {
+            var books = new List<Book>();
+            string commandLine = string.Format("SELECT TOP({0}) * FROM books", limit);
+            var connection = getConnection();
+            var command = new SqlCommand(commandLine, connection);
+            connection.Open();
+            var result = command.ExecuteReader();
+            while (result.Read())
+            {
+                books.Add(fillBook(result));
+            }
+            connection.Close();
+            return books;
+        }
+
         public void Create(Book book)
         {
             string commandLine = string.Format("INSERT INTO books VALUES('{0}', '{1}', {2}, '{3}')", book.Name, book.ReleaseDate.ToString("dd-MM-yyyy"), book.NumberOfPages, book.Author);
