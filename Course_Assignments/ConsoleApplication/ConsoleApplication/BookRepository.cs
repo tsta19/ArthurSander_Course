@@ -7,9 +7,9 @@ namespace ConsoleApplication
 {
     public class BookRepository
     {
-        public Book Get(int BookID)
+        public Book Get(int Id)
         {
-            string commandLine = string.Format("SELECT * FROM books WHERE id = '{0}'", BookID);
+            string commandLine = string.Format("SELECT * FROM books WHERE id = {0}", Id);
             var connection = getConnection();
             var command = new SqlCommand(commandLine, connection);
             connection.Open();
@@ -48,7 +48,7 @@ namespace ConsoleApplication
         private Book fillBook(SqlDataReader result)
         {
             var book = new Book();
-            book.BookID = (int) result.GetValue(0);
+            book.Id = (int) result.GetValue(0);
             book.Name = (string) result.GetValue(1);
             book.ReleaseDate = (DateTime) result.GetValue(2);
             book.NumberOfPages = (int) result.GetValue(3);

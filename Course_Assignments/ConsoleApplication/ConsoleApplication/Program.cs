@@ -89,17 +89,16 @@ namespace ConsoleApplication
             Console.WriteLine("");
             Console.WriteLine("--------------------------<[ Book Completion ]>--------------------------");
 
-            if (Console.ReadLine() == "yes") {
-                book.InformaionIsCorrect = true;
-
-            } else if (Console.ReadLine() == "no") {
-                book.InformaionIsCorrect = false;
-            }
-
-            if (book.InformaionIsCorrect) {
+            var informationIsCorrect = Console.ReadLine().ToLowerInvariant();
+            
+            if (informationIsCorrect == "yes") {
                 Console.WriteLine("Uploading book to database....");
                 bookRepository.Create(book);
                 Console.WriteLine("Book uploaded successfully!");
+
+            } else if (informationIsCorrect == "no") {
+                Console.Clear();
+                CreateOption();
             }
             
             Console.Read();
