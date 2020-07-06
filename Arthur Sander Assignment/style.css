@@ -1,0 +1,36 @@
+.background {
+    background-color: rgb(30, 30, 30);
+}
+
+.header {
+    background-color: rgb(30, 30, 30);
+    border: solid aqua 2px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 610px;
+    height: 50px;
+    font-size: 45px;
+    color: white;
+}
+
+input[type="button"] {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    font-size: 25px;
+    border: solid aqua 2px;
+    width: 150px;
+    height: 75px;
+}
+
+input[type="text"] {
+    background-color: rgb(30, 30, 30);
+    border: solid aqua 2px;
+    color: white;
+    font-size: 50px;
+    width: 450px;
+    height: 69px;
+}
+
+#unblockAll {
+    width: 612px;
+}

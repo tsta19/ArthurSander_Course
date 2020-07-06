@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+        function display(val) {
+            document.getElementById("result").value += val
+        }
+        
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+        
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+
+        function BlockThis() {
+            document.getElementById("blockThis").style.color = "black";
+            document.getElementById("blockThis").disabled = true;
+        }
+
+        function BlockRight() {
+            document.getElementById("blockLeft").style.color = "black";
+            document.getElementById("blockLeft").disabled = true;
+        }
+
+        function BlockLeft() {
+            document.getElementById("blockRight").style.color = "black";
+            document.getElementById("blockRight").disabled = true;
+        }
+        
+        function BlockOthers() {
+            document.getElementById("blockThis").style.color = "black";
+            document.getElementById("blockLeft").style.color = "black";
+            document.getElementById("blockRight").style.color = "black";
+            document.getElementById("blockThis").disabled = true;
+            document.getElementById("blockLeft").disabled = true;
+            document.getElementById("blockRight").disabled = true;
+            console.log("This is no longer clickable")
+        }
+
+        function UnblockAll() {
+            document.getElementById("blockThis").style.color = "white";
+            document.getElementById("blockThis").disabled = false;
+
+            document.getElementById("blockRight").style.color = "white";
+            document.getElementById("blockRight").disabled = false;
+
+            document.getElementById("blockLeft").style.color = "white";
+            document.getElementById("blockLeft").disabled = false;
+
+            document.getElementById("blockOthers").style.color = "white";
+            document.getElementById("blockOthers").disabled = false;
+        }
+        
+    </script>
+</head>
+    <body class="background">
+        <div class = "header">HTML - Calculator</div>
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="result"/></td>
+                <td><input type="button" value="c" onclick="clr()"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="display('1')"/></td>
+                <td><input type="button" value="2" onclick="display('2')"/></td>
+                <td><input type="button" value="3" onclick="display('3')"/></td>
+                <td><input type="button" value="/" onclick="display('/')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display('4')"/></td>
+                <td><input type="button" value="5" onclick="display('5')"/></td>
+                <td><input type="button" value="6" onclick="display('6')"/></td>
+                <td><input type="button" value="-" onclick="display('-')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display('7')"/></td>
+                <td><input type="button" value="8" onclick="display('8')"/></td>
+                <td><input type="button" value="9" onclick="display('9')"/></td>
+                <td><input type="button" value="+" onclick="display('+')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="display('.')"/></td>
+                <td><input type="button" value="0" onclick="display('0')"/></td>
+                <td><input type="button" value="=" onclick="solve()"/></td>
+                <td><input type="button" value="*" onclick="display('*')"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Block This" id="blockThis" onclick="BlockThis(blockThis)"/></td>
+                <td><input type="button" value="Block Right" id="blockRight" onclick="BlockRight(blockRight)"/></td>
+                <td><input type="button" value="Block Left" id="blockLeft" onclick="BlockLeft(blockLeft)"/></td>
+                <td><input type="button" value="Block Others" id="blockOthers" onclick="BlockOthers(blockOthers)"/></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td><input type="button" value="Unblock All" id="unblockAll" onclick="UnblockAll(unblockAll)"/></td>
+            </tr>
+        </table>
+    </body>
+</html>

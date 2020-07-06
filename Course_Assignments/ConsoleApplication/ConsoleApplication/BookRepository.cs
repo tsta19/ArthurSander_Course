@@ -23,7 +23,7 @@ namespace ConsoleApplication
         public List<Book> List(int limit = 5)
         {
             var books = new List<Book>();
-            string commandLine = string.Format("SELECT TOP({0}) * FROM books", limit);
+            string commandLine = string.Format("SELECT TOP({0}) * FROM books ORDER BY id DESC", limit);
             var connection = getConnection();
             var command = new SqlCommand(commandLine, connection);
             connection.Open();
@@ -38,13 +38,39 @@ namespace ConsoleApplication
 
         public void Create(Book book)
         {
-            string commandLine = string.Format("INSERT INTO books VALUES('{0}', '{1}', {2}, '{3}')", book.Name, book.ReleaseDate.ToString("dd-MM-yyyy"), book.NumberOfPages, book.Author);
+            string commandLine = string.Format("INSERT INTO books VALUES('{0}', '{1}', {2}, '{3}')", 
+                book.Name, book.ReleaseDate.ToString("yyyy-MM-dd"), book.NumberOfPages, book.Author);
+            
             var connection = getConnection();
             var command = new SqlCommand(commandLine, connection);
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
             
+        }
+
+        public void Update(Book book)
+        {
+            string commandLine = string.Format("UPDATE books SET name = '{0}', release_date = '{1}', number_of_pages = {2}, author = '{3}' WHERE id = {4}", 
+                    book.Name, book.ReleaseDate.ToString("yyyy-MM-dd"), book.NumberOfPages, book.Author, book.Id);
+
+            var connection = getConnection();
+            var command = new SqlCommand(commandLine, connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+        }
+
+        public void Delete(int id)
+        {
+            string commandLine = string.Format("DELETE FROM books WHERE id = ('{0}')", id);
+
+            var connection = getConnection();
+            var command = new SqlCommand(commandLine, connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
         private SqlConnection getConnection()
